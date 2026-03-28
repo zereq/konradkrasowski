@@ -1,6 +1,4 @@
-/* ======================================
-   VARIABLES & RESET
-====================================== */
+
 :root {
   --bg: #0a0a0a;
   --bg-2: #111111;
@@ -46,9 +44,6 @@ ul { list-style: none; }
 img { display: block; max-width: 100%; }
 input, select, textarea, button { font-family: var(--font-body); }
 
-/* ======================================
-   TYPOGRAPHY HELPERS
-====================================== */
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 6vw, 5rem);
@@ -65,9 +60,6 @@ input, select, textarea, button { font-family: var(--font-body); }
 
 .accent { color: var(--accent); }
 
-/* ======================================
-   NAVIGATION
-====================================== */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -137,9 +129,7 @@ input, select, textarea, button { font-family: var(--font-body); }
 .nav__burger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
 .nav__burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
 
-/* ======================================
-   HERO
-====================================== */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -317,9 +307,6 @@ input, select, textarea, button { font-family: var(--font-body); }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* ======================================
-   BUTTONS
-====================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -369,9 +356,6 @@ input, select, textarea, button { font-family: var(--font-body); }
 
 .btn--full { width: 100%; justify-content: center; }
 
-/* ======================================
-   SECTION COMMON
-====================================== */
 section {
   padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
   max-width: calc(var(--max-w) + 8rem);
@@ -405,9 +389,7 @@ section {
   max-width: 120px;
 }
 
-/* ======================================
-   ABOUT
-====================================== */
+
 .about {
   background: var(--bg-2);
   border-top: 1px solid var(--border);
@@ -451,6 +433,7 @@ section {
 }
 
 .about__photo-placeholder {
+  display: none;
   width: 60%;
   opacity: 0.7;
 }
@@ -517,9 +500,6 @@ section {
   flex-shrink: 0;
 }
 
-/* ======================================
-   OFFERS
-====================================== */
 .offers__title { margin-bottom: 3.5rem; }
 
 .offers__grid {
@@ -528,6 +508,18 @@ section {
   gap: 1.5rem;
   max-width: var(--max-w);
   margin: 0 auto;
+}
+
+.offers__single {
+  display: flex;
+  justify-content: center;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.offer-card--solo {
+  max-width: 560px;
+  width: 100%;
 }
 
 .offer-card {
@@ -636,9 +628,6 @@ section {
   font-size: 0.7rem;
 }
 
-/* ======================================
-   REVIEWS
-====================================== */
 .reviews {
   background: var(--bg-2);
   border-top: 1px solid var(--border);
@@ -712,9 +701,56 @@ section {
   color: var(--text-muted);
 }
 
-/* ======================================
-   CONTACT & SOCIAL
-====================================== */
+/* Empty review placeholders */
+.review--empty {
+  opacity: 0.35;
+  border-style: dashed;
+}
+
+.review__empty-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 1.5rem 0;
+  flex: 1;
+}
+
+.review__avatar--empty {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-dim);
+}
+
+/* Certificate image */
+.cert-image-wrap {
+  margin-top: 2rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.cert-image-wrap img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+.cert-placeholder {
+  width: 100%;
+  background: var(--surface);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cert-placeholder svg {
+  width: 100%;
+  height: auto;
+}
+
+
 .contact__centered {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -777,7 +813,7 @@ section {
 .social-card--instagram:hover { border-color: rgba(225,48,108,0.35); }
 
 .social-card--tiktok { --social-color: #ff0050; }
-.social-card--tiktok::before { background: linear-gradient(180deg, #010101, #ff0050); }
+.social-card--tiktok::before { background: linear-gradient(180deg, #640000, #ff0050); }
 .social-card--tiktok:hover { border-color: rgba(255,0,80,0.3); }
 
 .social-card--facebook { --social-color: #1877f2; }
@@ -857,9 +893,7 @@ section {
   width: 100%;
 }
 
-/* ======================================
-   FOOTER
-====================================== */
+
 .footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
@@ -896,9 +930,7 @@ section {
   margin-top: 0.5rem;
 }
 
-/* ======================================
-   ANIMATIONS
-====================================== */
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -920,9 +952,7 @@ section {
   transform: translateY(0);
 }
 
-/* ======================================
-   RESPONSIVE
-====================================== */
+
 @media (max-width: 900px) {
   .offers__grid,
   .reviews__grid {
